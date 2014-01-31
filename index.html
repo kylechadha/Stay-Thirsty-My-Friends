@@ -24,20 +24,25 @@
 <div id="viewport">
 
 <div id="status" ng-class="{green: green, orange: orange, red: red}">
-  <i class="fa" ng-class="{'fa-check-square-o': green, 'fa-bullseye': orange, 'fa-ambulance': red}"></i> Status: <b>{{status[0]}}</b>
+  <i class="fa" ng-class="{'fa-check-square-o': green, 'fa-exclamation-triangle': orange, 'fa-ambulance': red}"></i> Status: <b>{{status[0]}}</b>
 </div>
 
 <div id="input">
-  <div id="beer">
+  <div class="beer" ng-click="drinkEvaluator('b')">
     <i class="fa fa-beer"></i>
   </div>
-  <div id="mixed">
+  <div class="mixed" ng-click="drinkEvaluator('m')">
     <i class="fa fa-glass"></i>
   </div>
-  <div id="shot">
+  <div class="shot" ng-click="drinkEvaluator('s')">
     <i class="fa fa-bitbucket"></i>
   </div>
 </div>
+
+<div id="hours">
+  <div ng-repeat="row in times">
+    <div>{{row.time}}</div> <i ng-repeat="drink in row.drinks track by $index" class="fa" ng-class="{'fa-beer': drink == 'b', beer: drink == 'b', 'fa-glass': drink == 'm', mixed: drink =='m', 'fa-bitbucket': drink == 's', shot: drink == 's'}"></i>
+  </div>
 
 </div>
 
