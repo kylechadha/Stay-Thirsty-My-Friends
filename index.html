@@ -22,7 +22,22 @@
 
 <body ng-controller="DappCtrl">
 <div id="viewport">
-  
+
+<div id="status" ng-class="{green: green, orange: orange, red: red}">
+  <i class="fa" ng-class="{'fa-check-square-o': green, 'fa-bullseye': orange, 'fa-ambulance': red}"></i> Status: <b>{{status[0]}}</b>
+</div>
+
+<div id="input">
+  <div id="beer">
+    <i class="fa fa-beer"></i>
+  </div>
+  <div id="mixed">
+    <i class="fa fa-glass"></i>
+  </div>
+  <div id="shot">
+    <i class="fa fa-bitbucket"></i>
+  </div>
+</div>
 
 </div>
 
