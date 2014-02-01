@@ -2,6 +2,7 @@
   width: 1080px;
   height: 1920px;
   border: 12px solid black;
+  position: relative;
 }
 
 #status {
@@ -23,11 +24,11 @@
 }
 
 .orange {
-  background-color: #A5E94E;
+  background-color: #FF9900;
 }
 
 .red {
-  background-color: #FF7255;
+  background-color: #FF2300;
 }
 
 #input {
@@ -95,4 +96,19 @@
 #hours div i {
   margin: -2px 10px 0 10px;
   padding: 20px 25px;
+}
+
+#total {
+  width: 915px;
+  height: 200px;
+  position: absolute;
+  bottom: 0;
+  margin: 60px 60px;
+  color: white;
+  font-size: 60px;
+  padding: 20px;
+  background: rgb(125,125,125);
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  line-height: 200px;
 }
