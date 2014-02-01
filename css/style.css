@@ -1,7 +1,7 @@
 #viewport {
   width: 1080px;
   height: 1920px;
-  border: 12px solid black;
+  /*border: 12px solid black;*/
   position: relative;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .red {
-  background-color: #FF2300;
+  background-color: #FF3D1E;
 }
 
 #input {
@@ -104,6 +104,7 @@
   position: absolute;
   bottom: 0;
   margin: 60px 60px;
+  margin-bottom: 100px;
   color: white;
   font-size: 60px;
   padding: 20px;

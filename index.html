@@ -23,8 +23,8 @@
 <body ng-controller="DappCtrl">
 <div id="viewport">
 
-  <div id="status" ng-class="{green: total < 5, orange: total >= 5, red: total >= 10}">
-    <i class="fa" ng-class="{'fa-check-square-o': total < 5, 'fa-exclamation-triangle': total >= 5, 'fa-ambulance': total >= 10}"></i> <b>{{status}}</b>
+  <div id="status" ng-class="{green: db.total < 10, orange: db.total >= 10, red: db.total >= 15}">
+    <i class="fa" ng-class="{'fa-check-square-o': db.total < 10, 'fa-exclamation-triangle': db.total >= 10, 'fa-ambulance': db.total >= 15}"></i> <b>{{status}}</b>
   </div>
 
   <div id="input">
@@ -40,13 +40,13 @@
   </div>
 
   <div id="hours">
-    <div ng-repeat="row in times">
+    <div ng-repeat="row in db.times">
       <div>{{row.time}}</div> <i ng-repeat="drink in row.drinks track by $index" class="fa" ng-class="{'fa-beer': drink == 'b', beer: drink == 'b', 'fa-glass': drink == 'm', mixed: drink =='m', 'fa-bitbucket': drink == 's', shot: drink == 's'}"></i>
     </div>
   </div>
 
   <div id="total">
-    DRUNK INDEX&nbsp;&nbsp;&nbsp;&nbsp;{{total}}
+    DRUNK INDEX&nbsp;&nbsp;&nbsp;&nbsp;{{db.total}}
   </div>
 
 </div>
