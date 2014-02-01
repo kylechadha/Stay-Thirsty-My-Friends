@@ -1,6 +1,6 @@
 #viewport {
   width: 1080px;
-  height: 1920px;
+  height: 1880px;
   /*border: 12px solid black;*/
   position: relative;
 }
@@ -104,7 +104,7 @@
   position: absolute;
   bottom: 0;
   margin: 60px 60px;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
   color: white;
   font-size: 60px;
   padding: 20px;
