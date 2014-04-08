@@ -21,35 +21,36 @@
 </head>
 
 <body ng-controller="DappCtrl">
-<div id="viewport">
 
-  <div id="status" ng-class="{green: db.total < 10, orange: db.total >= 10, red: db.total >= 15}">
-    <i class="fa" ng-class="{'fa-check-square-o': db.total < 10, 'fa-exclamation-triangle': db.total >= 10, 'fa-ambulance': db.total >= 15}"></i> <b>{{status}}</b>
-  </div>
+  <div id="viewport">
 
-  <div id="input">
-    <div class="beer" ng-click="drinkEvaluator('b')">
-      <i class="fa fa-beer"></i>
+    <div id="status" ng-class="{green: db.total < 10, orange: db.total >= 10, red: db.total >= 15}">
+      <i class="fa" ng-class="{'fa-check-square-o': db.total < 10, 'fa-exclamation-triangle': db.total >= 10, 'fa-ambulance': db.total >= 15}"></i> <b>{{status}}</b>
     </div>
-    <div class="mixed" ng-click="drinkEvaluator('m')">
-      <i class="fa fa-glass"></i>
-    </div>
-    <div class="shot" ng-click="drinkEvaluator('s')">
-      <i class="fa fa-bitbucket"></i>
-    </div>
-  </div>
 
-  <div id="hours">
-    <div ng-repeat="row in db.times">
-      <div>{{row.time}}</div> <i ng-repeat="drink in row.drinks track by $index" class="fa" ng-class="{'fa-beer': drink == 'b', beer: drink == 'b', 'fa-glass': drink == 'm', mixed: drink =='m', 'fa-bitbucket': drink == 's', shot: drink == 's'}"></i>
+    <div id="input">
+      <div class="beer" ng-click="drinkEvaluator('b')">
+        <i class="fa fa-beer"></i>
+      </div>
+      <div class="mixed" ng-click="drinkEvaluator('m')">
+        <i class="fa fa-glass"></i>
+      </div>
+      <div class="shot" ng-click="drinkEvaluator('s')">
+        <i class="fa fa-bitbucket"></i>
+      </div>
     </div>
-  </div>
 
-  <div id="total">
-    DRUNK INDEX&nbsp;&nbsp;&nbsp;&nbsp;{{db.total}}
-  </div>
+    <div id="hours">
+      <div ng-repeat="row in db.times">
+        <div>{{row.time}}</div> <i ng-repeat="drink in row.drinks track by $index" class="fa" ng-class="{'fa-beer': drink == 'b', beer: drink == 'b', 'fa-glass': drink == 'm', mixed: drink =='m', 'fa-bitbucket': drink == 's', shot: drink == 's'}"></i>
+      </div>
+    </div>
 
-</div>
+    <div id="total">
+      DRUNK INDEX: {{db.total}}
+    </div>
+
+  </div>
 
 </body>
 </html>
