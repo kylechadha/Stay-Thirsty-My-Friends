@@ -43,7 +43,8 @@
 
     <div id="hours">
       <div ng-repeat="row in db.times">
-        <div>{{row.time}}</div> <i ng-repeat="drink in row.drinks track by $index" class="fa" ng-class="{'fa-beer': drink == 'b', beer: drink == 'b', 'fa-glass': drink == 'm', mixed: drink =='m', 'fa-bitbucket': drink == 's', shot: drink == 's'}"></i>
+        <div>{{row.time}}</div>
+        <i ng-repeat="drink in row.drinks track by $index" class="fa" ng-class="{'fa-beer': drink == 'b', beer: drink == 'b', 'fa-glass': drink == 'm', mixed: drink =='m', 'fa-bitbucket': drink == 's', shot: drink == 's'}"></i>
       </div>
     </div>
 

@@ -48,7 +48,7 @@
 }
 
 #input div:active {
-  /*border: 1px solid rgb(150,150,150);*/
+  border: 1px solid rgb(150,150,150);
 }
 
 #input div i {
@@ -70,7 +70,6 @@
 
 #hours div {
   background-color: rgb(200,200,200);
-  height: 25px;
   width: 233px;
   margin: 4px 18px;
   font-size: 1em;
@@ -89,7 +88,7 @@
 }
 
 #hours div i {
-  margin: 0 4px;
+  margin: 2px 4px;
   padding: 5px 6px;
 }
 
@@ -98,11 +97,8 @@
   height: 60px;
   position: absolute;
   bottom: 0;
-  /*margin: 10px 10px;*/
-  /*margin-bottom: 15px;*/
   color: white;
-  font-size: 1.4em;
-  /*padding: 5px;*/
+  font-size: 1.2em;
   background: rgb(125,125,125);
   font-family: 'Lato', sans-serif;
   text-align: center;

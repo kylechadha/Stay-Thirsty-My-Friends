@@ -6,27 +6,16 @@ app.controller("DappCtrl", function($scope, $firebase) {
 
   var IDs;
   $scope.fbRoot.$on("loaded", function() {
+    $scope.fbRoot.$add( {
+      times: [''],
+      total: 0
+    });
     IDs = $scope.fbRoot.$getIndex();
-
-    if (IDs.length == 0) {
-      $scope.fbRoot.$add( {
-        times: [''],
-        total: 0
-      });
-      $scope.fbRoot.$on("change", function() {
-        IDs = $scope.fbRoot.$getIndex();
-        $scope.db = $scope.fbRoot.$child(IDs[0]);
-      });
-    } else {
-      $scope.db = $scope.fbRoot.$child(IDs[0]);
-    };
-
+    $scope.db = $scope.fbRoot.$child(IDs[IDs.length - 1]);
   });
 
   $scope.options = ["Have another drink!", "Gandhi wouldn't...", "You'sdeffsckked p"];
   $scope.status = $scope.options[0];
-  // $scope.total = 0;
-  // $scope.times = [{time: "12PM", drinks:["s", "b"]}, {time: "1PM", drinks:["b", "m", "s"]}, {time: "2PM", drinks:["m"]}];
 
   $scope.drinkEvaluator = function(drink) {
 
@@ -40,8 +29,8 @@ app.controller("DappCtrl", function($scope, $firebase) {
     } else {
       for (i in $scope.db.times) {
         if ($scope.db.times[i].time == hour) {
-          found = true;
           $scope.db.times[i].drinks.push(drink);
+          found = true;
           break;
         }
       }
