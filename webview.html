@@ -1,12 +1,56 @@
 <!DOCTYPE html>
+<html ng-app="Dapp">
 <head>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+
+  <!-- Fonts -->
+  <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato'>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.min.css">
+  <link rel="stylesheet" type="text/css" href="css/webview.css">
 </head>
-<body>
-  <div id="webview">
-    <img src="img/galaxy-webview-s3.png" alt="">
-    <iframe src="index.html">
-      <p>Your browser does not support iframes. Check out http://transitalarm.herokuapp.com on your mobile phone instead!</p>
-    </iframe>
+
+<body ng-controller="DappCtrl">
+
+  <img src="img/galaxy-webview-s3.png" alt="">
+  <div id="viewport">
+
+    <div id="status" ng-class="{green: db.total < 10, orange: db.total >= 10, red: db.total >= 15}">
+      <i class="fa" ng-class="{'fa-check-square-o': db.total < 10, 'fa-exclamation-triangle': db.total >= 10, 'fa-ambulance': db.total >= 15}"></i> <b>{{status}}</b>
+    </div>
+
+    <div id="input">
+      <div class="beer" ng-click="drinkEvaluator('b')">
+        <i class="fa fa-beer"></i>
+      </div>
+      <div class="mixed" ng-click="drinkEvaluator('m')">
+        <i class="fa fa-glass"></i>
+      </div>
+      <div class="shot" ng-click="drinkEvaluator('s')">
+        <i class="fa fa-bitbucket"></i>
+      </div>
+    </div>
+
+    <div id="hours">
+      <div ng-repeat="row in db.times">
+        <div>{{row.time}}</div> <i ng-repeat="drink in row.drinks track by $index" class="fa" ng-class="{'fa-beer': drink == 'b', beer: drink == 'b', 'fa-glass': drink == 'm', mixed: drink =='m', 'fa-bitbucket': drink == 's', shot: drink == 's'}"></i>
+      </div>
+    </div>
+
+    <div id="total">
+      DRUNK INDEX: {{db.total}}
+    </div>
+
   </div>
+
 </body>
