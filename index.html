@@ -17,11 +17,12 @@
   <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/animate.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/webview.css">
 </head>
 
 <body ng-controller="DappCtrl">
 
+  <img id="cellphone-wrapper" src="img/galaxy-webview-s3.png">
   <div id="viewport">
 
     <div id="status" ng-class="{green: db.total < 10, orange: db.total >= 10, red: db.total >= 15}">
@@ -42,7 +43,8 @@
 
     <div id="hours">
       <div ng-repeat="row in db.times">
-        <div>{{row.time}}</div> <i ng-repeat="drink in row.drinks track by $index" class="fa" ng-class="{'fa-beer': drink == 'b', beer: drink == 'b', 'fa-glass': drink == 'm', mixed: drink =='m', 'fa-bitbucket': drink == 's', shot: drink == 's'}"></i>
+        <div>{{row.time}}</div>
+        <i ng-repeat="drink in row.drinks track by $index" class="fa" ng-class="{'fa-beer': drink == 'b', beer: drink == 'b', 'fa-glass': drink == 'm', mixed: drink =='m', 'fa-bitbucket': drink == 's', shot: drink == 's'}"></i>
       </div>
     </div>
 
@@ -53,4 +55,3 @@
   </div>
 
 </body>
-</html>

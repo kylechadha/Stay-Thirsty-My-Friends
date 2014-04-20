@@ -104,3 +104,16 @@
   text-align: center;
   line-height: 60px;
 }
+
+@media (max-width: 800px) {
+  #cellphone-wrapper {
+    display: none;
+  }
+  #viewport {
+    width: 288px;
+    height: 470px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+}
