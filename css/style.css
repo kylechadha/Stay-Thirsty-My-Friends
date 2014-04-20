@@ -110,10 +110,14 @@
     display: none;
   }
   #viewport {
-    width: 288px;
-    height: 470px;
+    width: 100%;
+    height: 100%;
     position: absolute;
     left: 0px;
     top: 0px;
+  }
+  #hours div {
+    margin: 0 auto;
+    width: 80%;
   }
 }
